@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace BotAPI.Types
 {
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Poll
+    public class PollAnswer
     {
         /// <summary>
         /// Unique poll identifier.
