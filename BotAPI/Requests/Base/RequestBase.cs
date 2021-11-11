@@ -19,8 +19,7 @@ namespace BotAPI.Requests.Base
 #nullable enable
         public HttpContent? ToHttpContent()
         {
-            string payload = JsonConvert.SerializeObject(this);
-            return new StringContent(content: payload, encoding: Encoding.UTF8, mediaType: "application/json");
+            return new StringContent(content: JsonConvert.SerializeObject(this), encoding: Encoding.UTF8, mediaType: "application/json");
         }
 #nullable disable
     }

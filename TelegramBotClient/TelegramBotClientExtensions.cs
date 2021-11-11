@@ -10,10 +10,16 @@ namespace Client
         {
             return client.MakeRequest<User>(new GetMeRequest()).Result;
         }
-        public static int Update(this TelegramBotClient client)
+        public static Message SendMessage(this TelegramBotClient client, long chatId, string text)
         {
-            var result = client.MakeRequest<List<Update>>(new UpdateRequest()).Result;
-            return result.Count;
+            return client.MakeRequest<Message>(new SendMessageRequest() { ChatId = chatId.ToString(), Text = text }).Result;
+        }
+
+
+
+        public static List<Update> Update(this TelegramBotClient client)
+        {
+            return client.MakeRequest<List<Update>>(new UpdateRequest()).Result;
         }
     }
 }

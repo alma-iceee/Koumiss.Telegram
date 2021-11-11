@@ -27,6 +27,10 @@ namespace Client
         {
             var url = $"{_baseRequestUrl}/{request.MethodName}";
 
+            var content = request.ToHttpContent();
+
+            var json = content.ReadAsStringAsync().Result;
+
             using var httpRequest = new HttpRequestMessage(method: request.Method, requestUri: url)
             {
                 Content = request.ToHttpContent()

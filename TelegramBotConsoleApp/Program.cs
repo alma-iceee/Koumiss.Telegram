@@ -13,16 +13,13 @@ namespace TelegramBotConsoleApp
 
             var user = client.GetMe();
 
-            var count = 1;
+            var update = client.Update();
 
-            while (count == 1)
-            {
-                count = client.Update();
-            }
+            for (int i = 0; i < 10; i++)
+                client.SendMessage(update[update.Count - 1].Message.Chat.Id, "HelloWorld");
 
             Console.WriteLine(user.Username);
 
-            Console.WriteLine(client._ipAddress);
 
             Console.ReadKey();
         }
