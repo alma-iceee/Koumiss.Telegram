@@ -11,16 +11,19 @@ namespace BotAPI.Types
         /// <summary>
         /// Optional. Document thumbnail as defined by sender.
         /// </summary>
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public PhotoSize? Thumb { get; set; }
 
         /// <summary>
         /// Optional. Original filename as defined by sender.
         /// </summary>
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string? FileName { get; set; }
 
         /// <summary>
         /// Optional. MIME type of the file as defined by sender.
         /// </summary>
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string? MimeType { get; set; }
 #nullable disable
     }

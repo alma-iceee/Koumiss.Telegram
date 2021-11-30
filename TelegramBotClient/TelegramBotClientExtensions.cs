@@ -10,6 +10,12 @@ namespace Client
         {
             return client.MakeRequest<User>(new GetMeRequest()).Result;
         }
+
+        /// <summary>
+        /// Send a new Message.
+        /// </summary>
+        /// <param name="chatId">Chat Id.</param>
+        /// <param name="text">Message text.</param>
         public static Message SendMessage(this TelegramBotClient client, long chatId, string text)
         {
             return client.MakeRequest<Message>(new SendMessageRequest() { ChatId = chatId.ToString(), Text = text }).Result;
